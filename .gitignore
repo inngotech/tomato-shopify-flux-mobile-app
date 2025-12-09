@@ -1,0 +1,17 @@
+# Flutter and Dart specific ignores
+**/.dart_tool/
+**/.idea/
+**/.vscode/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+
+# Generated files
+**/build/
+**/lib/generated/
+**/lib/generated_plugin_registrant.dart
+**/ios/.symlinks/
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/ios/Flutter/Generated.xcconfig
