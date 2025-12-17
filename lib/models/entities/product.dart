@@ -1161,8 +1161,18 @@ class Product {
       vendor = json['vendor'];
       description = json['descriptionHtml'] ?? json['description'];
       price = priceData != null ? priceData['amount'] : null;
-      regularPrice = compareAtPrice ?? price;
-      onSale = compareAtPrice != null && compareAtPrice != price;
+      // Parsing prices to doubles for accurate comparison
+      var priceVal = double.tryParse(price ?? '');
+      var compareAtVal = double.tryParse(compareAtPrice ?? '');
+
+      if (compareAtVal != null && priceVal != null && compareAtVal > priceVal) {
+        regularPrice = compareAtPrice;
+        onSale = true;
+      } else {
+        regularPrice = price;
+        onSale = false;
+      }
+
       type = '';
       salePrice = price;
       stockQuantity = json['totalInventory'];
@@ -1238,6 +1248,56 @@ class Product {
       }
 
       variations = variants;
+
+      // Collection-based discount logic
+      int? collectionDiscount;
+      if (collections is List) {
+        for (var item in collections) {
+          var metafield = item['node']?['metafield'];
+          if (metafield != null && metafield['value'] != null) {
+            collectionDiscount = int.tryParse(metafield['value'].toString());
+            // If we found a valid discount, break (using the first one found)
+            if (collectionDiscount != null && collectionDiscount > 0) {
+              break;
+            }
+          }
+        }
+      }
+
+      if (collectionDiscount != null && collectionDiscount > 0) {
+        // Apply discount to main product
+        double? originalPriceVal = double.tryParse(price ?? '');
+        if (originalPriceVal != null && originalPriceVal > 0) {
+          regularPrice =
+              price; // Original price becomes "regular" (strikethrough)
+          double discountedVal =
+              originalPriceVal * (1 - collectionDiscount / 100);
+          price = discountedVal.toStringAsFixed(2);
+          salePrice = price;
+          onSale = true;
+        }
+
+        // Apply discount to variations
+        if (variations != null) {
+          for (var variant in variations!) {
+            double? vOriginalPrice = double.tryParse(variant.price ?? '');
+            // Fallback to regularPrice if price is null/empty, though price should be set
+            if (vOriginalPrice == null && variant.regularPrice != null) {
+              vOriginalPrice = double.tryParse(variant.regularPrice!);
+            }
+
+            if (vOriginalPrice != null && vOriginalPrice > 0) {
+              variant.regularPrice =
+                  variant.price; // Set original price as regular
+              double vDiscountedVal =
+                  vOriginalPrice * (1 - collectionDiscount / 100);
+              variant.price = vDiscountedVal.toStringAsFixed(2);
+              variant.salePrice = variant.price;
+              variant.onSale = true;
+            }
+          }
+        }
+      }
     } catch (e, trace) {
       printLog(e.toString());
       printLog(trace.toString());

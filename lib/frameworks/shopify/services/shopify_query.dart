@@ -1111,6 +1111,9 @@ class ShopifyQuery {
               node {
                 id
                 title
+                metafield(namespace: "custom", key: "collection_discount") {
+                  value
+                }
               }
             }
           }

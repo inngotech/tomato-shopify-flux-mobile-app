@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:collection/collection.dart';
 import 'package:flux_localization/flux_localization.dart';
@@ -550,6 +551,23 @@ class ShopifyService extends BaseServices {
 
         for (var item in result.data!['node']['products']['edges']) {
           var product = item['node'];
+          // printLog('WAIT....=====================================================*****');
+          printLog('Product ID: ${product['id']}');
+          printLog('Product Title: ${product['title']}');
+          // Debugging variant prices
+          var debugVariants = product['variants']?['edges'];
+          if (debugVariants != null && debugVariants is List) {
+            printLog('Debugging Variants for ${product['title']}:');
+            for (var variantEdge in debugVariants) {
+              var variantNode = variantEdge['node'];
+              printLog('  - Variant ID: ${variantNode['id']}');
+              printLog('  - Price: ${variantNode['price']}');
+              printLog('  - CompareAtPrice: ${variantNode['compareAtPrice']}');
+            }
+          } else {
+            printLog('  - No variants found or invalid structure.');
+          }
+          // printLog(product);
           product['categoryId'] = categoryId;
 
           /// Hide out of stock.

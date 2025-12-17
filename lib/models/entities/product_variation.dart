@@ -436,8 +436,19 @@ class ProductVariation {
 
     id = parsedJson['id'];
     price = parsedJson['price']['amount'];
-    regularPrice = compareAtPrice ?? price;
-    onSale = compareAtPrice != null && compareAtPrice != price;
+
+    // Parsing prices to doubles for accurate comparison
+    double? priceVal = double.tryParse(price ?? '');
+    double? compareAtVal = double.tryParse(compareAtPrice ?? '');
+
+    if (compareAtVal != null && priceVal != null && compareAtVal > priceVal) {
+      regularPrice = compareAtPrice;
+      onSale = true;
+    } else {
+      regularPrice = price;
+      onSale = false;
+    }
+
     inStock = parsedJson['availableForSale'] ?? false;
     salePrice = price;
     stockQuantity = parsedJson['quantityAvailable'];
