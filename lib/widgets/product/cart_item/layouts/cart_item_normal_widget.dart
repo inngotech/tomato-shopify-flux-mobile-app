@@ -51,12 +51,18 @@ class CartItemNormalWidget extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(
-                      width: widthImageFeature, //constraints.maxWidth * 0.25,
-                      height: heightImageFeature, //constraints.maxWidth * 0.3,
-                      child: ImageResize(
-                        url: stateUI.imageFeature,
-                        fit: ImageTools.boxFit(kCartDetail['boxFit']),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: SizedBox(
+                        width: widthImageFeature, //constraints.maxWidth * 0.25,
+                        height:
+                            heightImageFeature, //constraints.maxWidth * 0.3,
+                        child: ImageResize(
+                          url: stateUI.imageFeature,
+                          width: widthImageFeature,
+                          height: heightImageFeature,
+                          fit: ImageTools.boxFit(kCartDetail['boxFit']),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 16.0),

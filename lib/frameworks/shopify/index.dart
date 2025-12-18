@@ -209,13 +209,59 @@ class ShopifyWidget extends BaseFrameworks
 
   @override
   Future<List<CountryState>> loadStates(Country country) async {
-    final items = await Tools.loadStatesByCountry(country.id!);
     var states = <CountryState>[];
-    if (items.isNotEmpty) {
-      for (var item in items) {
-        states.add(CountryState.fromConfig(item));
+
+    // Check if the country is Egypt
+    if (country.id == 'EG' || country.id == 'eg') {
+      // Egyptian Governorates
+      states = [
+        CountryState(id: 'cairo', code: 'Cairo', name: 'Cairo'),
+        CountryState(id: 'alexadria', code: 'Alexandria', name: 'Alexandria'),
+        CountryState(id: 'giza', code: 'Giza', name: 'Giza'),
+        CountryState(id: 'sharqia', code: 'Sharqia', name: 'Sharqia'),
+        CountryState(id: 'dakahlia', code: 'Dakahlia', name: 'Dakahlia'),
+        CountryState(id: 'beheira', code: 'Beheira', name: 'Beheira'),
+        CountryState(id: 'minya', code: 'Minya', name: 'Minya'),
+        CountryState(id: 'qalyubia', code: 'Qalyubia', name: 'Qalyubia'),
+        CountryState(id: 'gharbia', code: 'Gharbia', name: 'Gharbia'),
+        CountryState(id: 'aswan', code: 'Aswan', name: 'Aswan'),
+        CountryState(id: 'asyut', code: 'Asyut', name: 'Asyut'),
+        CountryState(id: 'beni suef', code: 'Beni Suef', name: 'Beni Suef'),
+        CountryState(id: 'port said', code: 'Port Said', name: 'Port Said'),
+        CountryState(id: 'damietta', code: 'Damietta', name: 'Damietta'),
+        CountryState(id: 'faiyum', code: 'Faiyum', name: 'Faiyum'),
+        CountryState(id: 'ismailia', code: 'Ismailia', name: 'Ismailia'),
+        CountryState(
+            id: 'kafr el sheikh',
+            code: 'Kafr El Sheikh',
+            name: 'Kafr El Sheikh'),
+        CountryState(id: 'luxor', code: 'Luxor', name: 'Luxor'),
+        CountryState(id: 'matrouh', code: 'Matrouh', name: 'Matrouh'),
+        CountryState(id: 'monufia', code: 'Monufia', name: 'Monufia'),
+        CountryState(id: 'red sea', code: 'Red Sea', name: 'Red Sea'),
+        CountryState(
+            id: 'north sinai', code: 'North Sinai', name: 'North Sinai'),
+        CountryState(
+            id: 'south sinai', code: 'South Sinai', name: 'South Sinai'),
+        CountryState(id: 'suez', code: 'Suez', name: 'Suez'),
+        CountryState(id: 'sohag', code: 'Sohag', name: 'Sohag'),
+        CountryState(id: 'qena', code: 'Qena', name: 'Qena'),
+        CountryState(id: 'new valley', code: 'New Valley', name: 'New Valley'),
+      ];
+    } else {
+      // For other countries, try to load from configuration
+      try {
+        final items = await Tools.loadStatesByCountry(country.id!);
+        if (items.isNotEmpty) {
+          for (var item in items) {
+            states.add(CountryState.fromConfig(item));
+          }
+        }
+      } catch (e) {
+        printLog('Error loading states: $e');
       }
     }
+
     return states;
   }
 

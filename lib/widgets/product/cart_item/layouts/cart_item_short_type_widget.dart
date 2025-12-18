@@ -28,12 +28,17 @@ class CartItemShortTypeWidget extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            SizedBox(
-              width: _kMinHeightCard,
-              height: _kMinHeightCard,
-              child: ImageResize(
-                url: stateUI.imageFeature,
-                fit: ImageTools.boxFit(kCartDetail['boxFit']),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: SizedBox(
+                width: _kMinHeightCard,
+                height: _kMinHeightCard,
+                child: ImageResize(
+                  url: stateUI.imageFeature,
+                  width: _kMinHeightCard,
+                  height: _kMinHeightCard,
+                  fit: ImageTools.boxFit(kCartDetail['boxFit']),
+                ),
               ),
             ),
             const SizedBox(width: 16.0),

@@ -110,6 +110,8 @@ class CartItemWebWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
               child: ImageResize(
                 url: stateUI.imageFeature,
+                width: 80,
+                height: 80,
                 fit: ImageTools.boxFit(kCartDetail['boxFit']),
               ),
             ),

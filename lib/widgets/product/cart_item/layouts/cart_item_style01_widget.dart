@@ -155,12 +155,17 @@ class CartItemStyle01Widget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           const SizedBox(width: 10),
-                          SizedBox(
-                            width: 80,
-                            height: 80,
-                            child: ImageResize(
-                              url: stateUI.imageFeature,
-                              fit: ImageTools.boxFit(kCartDetail['boxFit']),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: SizedBox(
+                              width: 80,
+                              height: 120,
+                              child: ImageResize(
+                                url: stateUI.imageFeature,
+                                width: 80,
+                                // height: 120,
+                                fit: ImageTools.boxFit(kCartDetail['boxFit']),
+                              ),
                             ),
                           ),
                           const SizedBox(width: 16.0),
