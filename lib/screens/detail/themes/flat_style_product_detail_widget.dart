@@ -22,7 +22,7 @@ import '../widgets/product_size_guide.dart';
 import '../widgets/product_title/product_title_state_ui.dart';
 import 'detail_product_layout.dart';
 
-const _kSizeBttomWidget = 115.0;
+const _kSizeBttomWidget = 130.0;
 const _kSizeCornerButton = 40.0;
 const _marginBottonCornerButton = 22.0;
 const _marginEndCornerButton = 10.0;

@@ -579,7 +579,7 @@ class ShopifyService extends BaseServices {
 
       list.add(PaymentMethod.fromJson({
         'id': '0',
-        'title': 'Checkout Free',
+        'title': 'Checkout Now',
         'description': '',
         'enabled': true,
       }));
