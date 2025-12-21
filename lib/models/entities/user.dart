@@ -244,7 +244,9 @@ class User {
       phoneNumber = json['phone'];
       isSocial = json['isSocial'] ?? false;
       expiresAt = tokenExpiresAt;
-      final defaultAddress = json['defaultAddress'];
+      final defaultAddress = json['defaultAddress'] != null
+          ? Map.from(json['defaultAddress'])
+          : null;
 
       shipping = defaultAddress is Map
           ? Shipping.fromShopifyJson(defaultAddress)
@@ -288,12 +290,10 @@ class User {
 
       if (addressesData != null) {
         if (addressesData is List) {
-          // Direct list format
           for (var addressData in addressesData) {
             addresses.add(Address.fromShopifyCustomerJson(addressData));
           }
         } else if (addressesData['edges'] != null) {
-          // GraphQL edges format
           for (var edge in addressesData['edges']) {
             final addressData = edge['node'];
             addresses.add(Address.fromShopifyCustomerJson(addressData));
@@ -301,23 +301,28 @@ class User {
         }
       }
 
+      // Check if defaultAddress exists before passing it to Shipping/Billing
+      final defaultAddr = json['defaultAddress'];
+
       return User.init(
         id: json['id'].toString(),
         name: json['displayName'] ??
             '${json['firstName'] ?? ''} ${json['lastName'] ?? ''}'.trim(),
-        firstName: json['firstName'],
-        lastName: json['lastName'],
+        firstName: json['firstName'] ?? '',
+        lastName: json['lastName'] ?? '',
         username: json['email'],
         email: json['emailAddress']?['emailAddress'],
         phoneNumber: json['phoneNumber']?['phoneNumber'],
-        shipping: Shipping.fromShopifyJson(json['defaultAddress']),
-        billing: Billing.fromShopifyJson(json['defaultAddress']),
+        shipping:
+            defaultAddr != null ? Shipping.fromShopifyJson(defaultAddr) : null,
+        billing:
+            defaultAddr != null ? Billing.fromShopifyJson(defaultAddr) : null,
         addresses: addresses,
         cookie: token,
         isSocial: true,
       );
     } catch (e) {
-      printLog(e.toString());
+      printLog('Error in fromShopifyCustomerAccount: ${e.toString()}');
       rethrow;
     }
   }

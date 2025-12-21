@@ -10,7 +10,7 @@ Map<String, dynamic> environment = {
   },
   'shopifyCustomerAccountConfig': {
     'enabled': true,
-    'clientId': 'f63237cc-12fd-4e39-831c-261d374291a9',
+    'clientId': '3f8b2dde-a1e4-41c1-b37f-11648b4e8268',
     'shopId': '78378402045',
   },
   "addressFields": [
