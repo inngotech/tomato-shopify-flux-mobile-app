@@ -11,7 +11,7 @@ Map<String, dynamic> environment = {
   'shopifyCustomerAccountConfig': {
     'enabled': true,
     'clientId': 'f63237cc-12fd-4e39-831c-261d374291a9',
-    'shopId': '70377242774',
+    'shopId': '78378402045',
   },
   "addressFields": [
     {

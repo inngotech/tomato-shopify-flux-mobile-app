@@ -117,6 +117,9 @@
         <string>ppemerchantsdkv3</string>
         <string>paytmmp</string>
         <string>gpay</string>
+		<string>whatsapp</string>
+		<string>phonepe</string>
+		<string>paystack</string>
 	</array>
 	<key>NSUserActivityTypes</key>
 	<array>
@@ -136,11 +139,11 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires access to the camera for QR Code or Barcode scanner feature which can be access from the search bar</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to your location to show on the map screen and provide location-based services.</string>
+	<string>Your location is used to show nearby stores, calculate shipping costs, and provide accurate delivery estimates.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to your location to show on the map screen and provide location-based services.</string>
+	<string>Your location is used to show nearby stores, calculate shipping costs, and provide accurate delivery estimates.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app needs access to your location to show on the map screen and provide location-based services.</string>
+	<string>Your location is used to show nearby stores, calculate shipping costs, and provide accurate delivery estimates.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>This identifier will be used to deliver personalized ads to you. &quot;Ask App Not to track&quot; will limit Advertisement network&apos;s ability to deliver relevant ads to you but will not reduce the number of ads you receive.</string>
 	<key>SKAdNetworkItems</key>
@@ -179,7 +182,9 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We would like access to store Image/Videos in your Photo Library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to your photo library to select the photo to use as your profile picture.</string>
+	<string>This app requires access to your photo library to select the photo to use as your profile picture or upload product reviews.</string>
+	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
