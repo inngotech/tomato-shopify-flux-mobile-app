@@ -11,7 +11,7 @@ import UserNotifications
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         FirebaseApp.configure()
-        GMSServices.provideAPIKey(Environment.googleApiKeyIos)
+        GMSServices.provideAPIKey("AIzaSyByA5QsN_bLS08yi5BUyt5EHnzYMOwFk-0")
         GeneratedPluginRegistrant.register(with: self)
         if #available(iOS 10.0, *) {
             application.applicationIconBadgeNumber = 0 // Clear Badge Counts
