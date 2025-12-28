@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart'
-    hide X509Certificate;
+    hide X509Certificate; 
 import 'package:flux_interface/flux_interface.dart';
 import 'package:flux_ui/flux_ui.dart';
 import 'package:injectable/injectable.dart';
