@@ -1,0 +1,1140 @@
+// ignore_for_file: prefer_single_quotes, lines_longer_than_80_chars final
+Map<String, dynamic> environment = {
+  "appConfig": "lib/config/config_en.json",
+
+  /// ➡️ lib/common/config.dart
+  "serverConfig": {
+    'type': 'shopify',
+    'url': 'https://fluxchat.myshopify.com',
+    'accessToken': '04728104cfb6a4e5569cf5c34e6a4d79',
+  },
+  'shopifyCustomerAccountConfig': {
+    'enabled': true,
+    'clientId': '3f8b2dde-a1e4-41c1-b37f-11648b4e8268',
+    'shopId': '78378402045',
+  },
+  "addressFields": [
+    {
+      'type': 'firstName',
+      'visible': true,
+      'position': 1,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'lastName',
+      'visible': true,
+      'position': 2,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'phoneNumber',
+      'visible': true,
+      'position': 3,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'email',
+      'visible': true,
+      'position': 4,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'searchAddress',
+      'visible': true,
+      'position': 5,
+    },
+    {
+      'type': 'selectAddress',
+      'visible': true,
+      'position': 6,
+    },
+    {
+      'type': 'country',
+      'visible': true,
+      'required': true,
+      'position': 7,
+    },
+    {
+      'type': 'state',
+      'visible': true,
+      'required': true,
+      'position': 8,
+    },
+    {
+      'type': 'city',
+      'visible': true,
+      'position': 9,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'apartment',
+      'visible': true,
+      'position': 10,
+      'editable': true,
+      'required': false,
+    },
+    {
+      'type': 'company',
+      'visible': true,
+      'position': 11,
+      'editable': true,
+      'required': false,
+      'defaultValue': '',
+    },
+    {
+      'type': 'street',
+      'visible': true,
+      'position': 12,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+    {
+      'type': 'zipCode',
+      'visible': true,
+      'position': 13,
+      'editable': true,
+      'required': true,
+      'defaultValue': '',
+    },
+  ],
+
+  /// ➡️ lib/common/config/general.dart
+  "defaultDarkTheme": false,
+  "loginSMSConstants": {
+    "countryCodeDefault": "US",
+    "dialCodeDefault": "+1",
+    "nameDefault": "United States",
+  },
+  "phoneNumberConfig": {
+    "enable": true,
+    "countryCodeDefault": "VN",
+    "dialCodeDefault": "+84",
+    "useInternationalFormat": true,
+    "selectorFlagAsPrefixIcon": true,
+    "showCountryFlag": true,
+    "customCountryList": [], // List alpha_2_code. E.g: ["VN", "AU"]
+    "selectorType": "BOTTOM_SHEET", // [DROPDOWN, BOTTOM_SHEET, DIALOG]
+  },
+  "appRatingConfig": {
+    'showOnOpen': false,
+    'android': 'com.inspireui.fluxstore',
+    'ios': '1469772800',
+    'minDays': 7,
+    'minLaunches': 10,
+    'remindDays': 7,
+    'remindLaunches': 10,
+  },
+  "advanceConfig": {
+    "DefaultLanguage": "en",
+    "allowGetDatasByCategoryFilter": true,
+    "DetailedBlogLayout": "fullSizeImageType",
+    "EnablePointReward": true,
+    "hideOutOfStock": false,
+    "EnableRating": true,
+    "hideEmptyProductListRating": true,
+    "EnableShipping": true,
+    "inAppWebView": true,
+    'AlwaysClearWebViewCache': false,
+    'AlwaysClearWebViewCookie': false,
+    "EnableBottomAddToCart": false,
+
+    /// Enable search by SKU in search screen
+    "EnableSkuSearch": true,
+
+    /// Show stock Status on product List & Product Detail
+    "showStockStatus": true,
+
+    /// Gird count setting on Category screen
+    "GridCount": 3,
+
+    /// set isCaching to true if you have upload the config file to mstore-api
+    /// set kIsResizeImage to true if you have finished running Re-generate image plugin
+    /// ref: https://support.inspireui.com/help-center/articles/3/8/19/app-performance
+    "isCaching": false,
+    "kIsResizeImage": false,
+
+    /// Stripe payment only: set currencyCode and smallestUnitRate.
+    /// All API requests expect amounts to be provided in a currency’s smallest unit.
+    /// For example, to charge 10 USD, provide an amount value of 1000 (i.e., 1000 cents).
+    /// Reference: https://stripe.com/docs/currencies#zero-decimal
+    "DefaultCurrency": {
+      "symbol": "\$",
+      "decimalDigits": 2,
+      "symbolBeforeTheNumber": true,
+      "currency": "USD",
+      "currencyCode": "usd",
+      "countryCode": "US",
+      "smallestUnitRate": 100, // 100 cents = 1 usd
+    },
+    "Currencies": [
+      {
+        "symbol": "\$",
+        "decimalDigits": 2,
+        "symbolBeforeTheNumber": true,
+        "currency": "USD",
+        "currencyCode": "usd",
+        "countryCode": "US",
+        "smallestUnitRate": 100, // 100 cents = 1 usd
+      },
+      {
+        "symbol": "đ",
+        "decimalDigits": 0,
+        "symbolBeforeTheNumber": false,
+        "currency": "VND",
+        "currencyCode": "VND",
+        "countryCode": "VN",
+      },
+      {
+        "symbol": "€",
+        "decimalDigits": 2,
+        "symbolBeforeTheNumber": true,
+        "currency": "EUR",
+        "currencyCode": "EUR",
+      },
+      {
+        "symbol": "£",
+        "decimalDigits": 2,
+        "symbolBeforeTheNumber": true,
+        "currency": "Pound sterling",
+        "currencyCode": "gbp",
+        "smallestUnitRate": 100, // 100 pennies = 1 pound
+      },
+      {
+        "symbol": "₹",
+        "decimalDigits": 0,
+        "symbolBeforeTheNumber": true,
+        "currency": "INR",
+        "currencyCode": "INR",
+      },
+      {
+        "symbol": "AED",
+        "currency": "AED",
+        "countryCode": "AE",
+        "currencyCode": "AED",
+        "decimalDigits": 0,
+        "smallestUnitRate": 1,
+        "symbolBeforeTheNumber": true
+      },
+    ],
+
+    /// Below config is used for Magento store
+    "DefaultStoreViewCode": "",
+    "EnableAttributesConfigurableProduct": ["color", "size"],
+
+    "gdpr": {
+      "showPrivacyPolicyFirstTime": false,
+      "showDeleteAccount": true,
+      "confirmCaptcha": "PERMANENTLY DELETE",
+    },
+
+    /// if the woo commerce website supports multi languages
+    /// set false if the website only have one language
+    "isMultiLanguages": true,
+
+    ///Review gets approved automatically on woocommerce admin without requiring administrator to approve.
+    "EnableApprovedReview": false,
+
+    /// Sync Cart from website and mobile
+    "EnableSyncCartFromWebsite": false,
+    "EnableSyncCartToWebsite": false,
+
+    /// Disable shopping Cart due to Listing Users request
+    "EnableShoppingCart": false,
+
+    /// Enable firebase to support FCM, realtime chat for Fluxstore MV
+    "EnableFirebase": true,
+
+    /// ratio Product Image, default value is 1.2 = height / width
+    "RatioProductImage": 1.2,
+
+    /// Enable Coupon Code When checkout
+    "EnableCouponCode": true,
+
+    /// Enable to Show Coupon list.
+    "ShowCouponList": false,
+
+    /// Enable this will show all coupons in Coupon list.
+    /// Disable will show only coupons which is restricted to the current user"s email.
+    "ShowAllCoupons": true,
+
+    /// Show expired coupons in Coupon list.
+    "ShowExpiredCoupons": true,
+    "AlwaysShowTabBar": false,
+
+    /// Privacy Policies page ID. Accessible in the app via Settings > Privacy menu.
+    "PrivacyPoliciesPageId": null,
+    "PrivacyPoliciesPageUrlOrId": "https://policies.google.com/",
+
+    /// The radius to get vendors in map view for Fluxstore MV
+    "QueryRadiusDistance": 10,
+    //km
+
+    /// Enable Delivery Date when doing checkout
+    "EnableDeliveryDateOnCheckout": true,
+
+    "AutoDetectLanguage": false
+  },
+  "defaultDrawer": {
+    "logo": "assets/images/logo.png",
+    "background": null,
+    "items": [
+      {"type": "home", "show": true},
+      {"type": "blog", "show": true},
+      {"type": "categories", "show": true},
+      {"type": "cart", "show": true},
+      {"type": "profile", "show": true},
+      {"type": "login", "show": true},
+      {"type": "category", "show": true}
+    ]
+  },
+  "defaultSettings": [
+    "products",
+    "chat",
+    "wishlist",
+    "notifications",
+    "language",
+    "currencies",
+    "darkTheme",
+    "order",
+    // "point",
+    "rating",
+    "privacy",
+    "about"
+  ],
+  "loginSetting": {
+    "IsRequiredLogin": false,
+    "showAppleLogin": false,
+    "showFacebook": false,
+    "showSMSLogin": false,
+    "showGoogleLogin": false,
+    "showPhoneNumberWhenRegister": false,
+    "requirePhoneNumberWhenRegister": false,
+    "isResetPasswordSupported": true,
+  },
+  "oneSignalKey": {"enable": false, "appID": ""},
+
+  /// ➡️ lib/common/onboarding.dart
+  "onBoardingConfig": {
+    'enableOnBoarding': true,
+    'version': 2,
+    'autoCropImageByDesign': true,
+    'isOnlyShowOnFirstTime': true,
+    'showLanguage': true,
+    'data': [
+      {
+        'title': 'Discover something new',
+        'image': 'https://i.imgur.com/rFgauTf.jpeg',
+        'desc': 'Special new arrivals just for you'
+      },
+      {
+        'title': 'Update trendy outfit',
+        'image': 'https://i.imgur.com/q3RXh8D.jpeg',
+        'desc': 'Favorite brands and hottest trends'
+      },
+      {
+        'title': 'Explore your true style',
+        'image': 'https://i.imgur.com/zGgkOcJ.jpeg',
+        'desc': 'Relax and let us bring the style to you'
+      }
+    ],
+  },
+
+  /// ➡️ lib/common/advertise.dart
+  "adConfig": {
+    "enable": false,
+    "facebookTestingId": "",
+    "googleTestingId": [],
+    "ads": [
+      {
+        "type": "banner",
+        "provider": "google",
+        "iosId": "ca-app-pub-3940256099942544/2934735716",
+        "androidId": "ca-app-pub-3940256099942544/6300978111",
+        "showOnScreens": ["home", "search"],
+        "hideOnScreens": [],
+        // "waitingTimeToDisplay": 8,
+      },
+      {
+        "type": "banner",
+        "provider": "google",
+        "iosId": "ca-app-pub-2101182411274198/5418791562",
+        "androidId": "ca-app-pub-2101182411274198/4052745095",
+        // "showOnScreens": ["home", "category", "product-detail"],
+        "hideOnScreens": [],
+      },
+      {
+        "type": "interstitial",
+        "provider": "google",
+        "iosId": "ca-app-pub-3940256099942544/4411468910",
+        "androidId": "ca-app-pub-3940256099942544/4411468910",
+        // "showOnScreens": ["profile"],
+        "hideOnScreens": [],
+        // "waitingTimeToDisplay": 8,
+      },
+      {
+        "type": "reward",
+        "provider": "google",
+        "iosId": "ca-app-pub-3940256099942544/1712485313",
+        "androidId": "ca-app-pub-3940256099942544/4411468910",
+        // "showOnScreens": ["cart"],
+        "hideOnScreens": [],
+        // "waitingTimeToDisplay": 8,
+      },
+      {
+        "type": "banner",
+        "provider": "facebook",
+        "iosId": "IMG_16_9_APP_INSTALL#430258564493822_876131259906548",
+        "androidId": "IMG_16_9_APP_INSTALL#430258564493822_489007588618919",
+        // "showOnScreens": ["home"],
+        "hideOnScreens": [],
+        // "waitingTimeToDisplay": 8,
+      },
+      {
+        "type": "interstitial",
+        "provider": "facebook",
+        "iosId": "430258564493822_489092398610438",
+        "androidId": "IMG_16_9_APP_INSTALL#430258564493822_489092398610438",
+        // "showOnScreens": ["profile"],
+        "hideOnScreens": [],
+        // "waitingTimeToDisplay": 8,
+      },
+    ]
+  },
+
+  /// ➡️ lib/common/languages.dart
+  "languagesInfo": [
+    {
+      "name": "English",
+      "icon": "assets/images/country/gb.png",
+      "code": "en",
+      "text": "English",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Chinese",
+      "icon": "assets/images/country/zh.png",
+      "code": "zh",
+      "text": "Chinese",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Hindi",
+      "icon": "assets/images/country/in.png",
+      "code": "hi",
+      "text": "हिन्दी",
+      "storeViewCode": "hi"
+    },
+    {
+      "name": "Spanish",
+      "icon": "assets/images/country/es.png",
+      "code": "es",
+      "text": "Español",
+      "storeViewCode": ""
+    },
+    {
+      "name": "French",
+      "icon": "assets/images/country/fr.png",
+      "code": "fr",
+      "text": "Français",
+      "storeViewCode": "fr"
+    },
+    {
+      "name": "Arabic",
+      "icon": "assets/images/country/ar.png",
+      "code": "ar",
+      "text": "العربية",
+      "storeViewCode": "ar"
+    },
+    {
+      "name": "Russian",
+      "icon": "assets/images/country/ru.png",
+      "code": "ru",
+      "text": "Русский",
+      "storeViewCode": "ru"
+    },
+    {
+      "name": "Indonesian",
+      "icon": "assets/images/country/id.png",
+      "code": "id",
+      "text": "Bahasa Indonesia",
+      "storeViewCode": "id"
+    },
+    {
+      "name": "Japanese",
+      "icon": "assets/images/country/ja.png",
+      "code": "ja",
+      "text": "日本語",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Korean",
+      "icon": "assets/images/country/ko.png",
+      "code": "ko",
+      "text": "한국어/조선말",
+      "storeViewCode": "ko"
+    },
+    {
+      "name": "Vietnamese",
+      "icon": "assets/images/country/vn.png",
+      "code": "vi",
+      "text": "Tiếng Việt",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Romanian",
+      "icon": "assets/images/country/ro.png",
+      "code": "ro",
+      "text": "Românește",
+      "storeViewCode": "ro"
+    },
+    {
+      "name": "Turkish",
+      "icon": "assets/images/country/tr.png",
+      "code": "tr",
+      "text": "Türkçe",
+      "storeViewCode": "tr"
+    },
+    {
+      "name": "Italian",
+      "icon": "assets/images/country/it.png",
+      "code": "it",
+      "text": "Italiano",
+      "storeViewCode": "it"
+    },
+    {
+      "name": "German",
+      "icon": "assets/images/country/de.png",
+      "code": "de",
+      "text": "Deutsch",
+      "storeViewCode": "de"
+    },
+    {
+      "name": "Brazilian Portuguese",
+      "icon": "assets/images/country/br.png",
+      "code": "pt_BR",
+      "text": "Português do Brasil",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Hungarian",
+      "icon": "assets/images/country/hu.png",
+      "code": "hu",
+      "text": "Magyar nyelv",
+      "storeViewCode": "hu"
+    },
+    {
+      "name": "Hebrew",
+      "icon": "assets/images/country/he.png",
+      "code": "he",
+      "text": "עִבְרִית",
+      "storeViewCode": "he"
+    },
+    {
+      "name": "Thai",
+      "icon": "assets/images/country/th.png",
+      "code": "th",
+      "text": "ภาษาไทย",
+      "storeViewCode": "th"
+    },
+    {
+      "name": "Dutch",
+      "icon": "assets/images/country/nl.png",
+      "code": "nl",
+      "text": "Nederlands",
+      "storeViewCode": "nl"
+    },
+    {
+      "name": "Serbian",
+      "icon": "assets/images/country/sr.jpeg",
+      "code": "sr",
+      "text": "српски",
+      "storeViewCode": "sr"
+    },
+    {
+      "name": "Polish",
+      "icon": "assets/images/country/pl.png",
+      "code": "pl",
+      "text": "Język polski",
+      "storeViewCode": "pl"
+    },
+    {
+      "name": "Persian",
+      "icon": "assets/images/country/fa.png",
+      "code": "fa",
+      "text": "زبان فارسی",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Ukrainian",
+      "icon": "assets/images/country/uk.png",
+      "code": "uk",
+      "text": "Українська мова",
+      "storeViewCode": ""
+    },
+    {
+      "name": "Bengali",
+      "icon": "assets/images/country/bn.png",
+      "code": "bn",
+      "text": "বাংলা",
+      "storeViewCode": ""
+    },
+    // 26 Tamil - intl_ta.arb
+    {
+      "name": "Tamil",
+      "icon": "assets/images/country/ta.png",
+      "code": "ta",
+      "text": "தமிழ்",
+      "storeViewCode": ""
+    },
+    // 27 Kurdish - intl_ku.arb
+    {
+      "name": "Kurdish",
+      "icon": "assets/images/country/ku.png",
+      "code": "ku",
+      "text": "Kurdî / کوردی",
+      "storeViewCode": ""
+    },
+    // 28 Czech - intl_cs.arb
+    {
+      "name": "Czech",
+      "icon": "assets/images/country/cs.png",
+      "code": "cs",
+      "text": "Čeština",
+      "storeViewCode": "cs"
+    },
+    // 29 Swedish - intl_sv.arb
+    {
+      "name": "Swedish",
+      "icon": "assets/images/country/sv.png",
+      "code": "sv",
+      "text": "Svenska",
+      "storeViewCode": ""
+    },
+    // 30 Finland - intl_fi.arb
+    {
+      "name": "Finland",
+      "icon": "assets/images/country/fi.png",
+      "code": "fi",
+      "text": "Suomi",
+      "storeViewCode": ""
+    },
+    // 31 Greek - intl_el.arb
+    {
+      "name": "Greek",
+      "icon": "assets/images/country/el.png",
+      "code": "el",
+      "text": "Ελληνικά",
+      "storeViewCode": ""
+    },
+    // 32 Khmer - intl_km.arb
+    {
+      "name": "Khmer",
+      "icon": "assets/images/country/km.png",
+      "code": "km",
+      "text": "ភាសាខ្មែរ",
+      "storeViewCode": ""
+    },
+    // 33 Kannada - intl_kn.arb
+    {
+      "name": "Kannada",
+      "icon": "assets/images/country/kn.png",
+      "code": "kn",
+      "text": "ಕನ್ನಡ",
+      "storeViewCode": ""
+    },
+    // 34 Marathi - intl_mr.arb
+    {
+      "name": "Marathi",
+      "icon": "assets/images/country/mr.jpeg",
+      "code": "mr",
+      "text": "मराठी भाषा",
+      "storeViewCode": ""
+    },
+    // 35 Malay - intl_ms.arb
+    {
+      "name": "Malay",
+      "icon": "assets/images/country/ms.jpeg",
+      "code": "ms",
+      "text": "بهاس ملايو",
+      "storeViewCode": ""
+    },
+    // 36 Bosnian - intl_bs.arb
+    {
+      "name": "Bosnian",
+      "icon": "assets/images/country/bs.png",
+      "code": "bs",
+      "text": "босански",
+      "storeViewCode": ""
+    },
+    // 37 Lao - intl_lo.arb
+    {
+      "name": "Lao",
+      "icon": "assets/images/country/lo.png",
+      "code": "lo",
+      "text": "ພາສາລາວ",
+      "storeViewCode": ""
+    },
+    // 38 Slovak - intl_sk.arb
+    {
+      "name": "Slovak",
+      "icon": "assets/images/country/sk.png",
+      "code": "sk",
+      "text": "Slovaščina",
+      "storeViewCode": ""
+    },
+    // 39 Swahili - intl_sw.arb
+    {
+      "name": "Swahili",
+      "icon": "assets/images/country/sw.png",
+      "code": "sw",
+      "text": "كِيْسَوَاحِيْلِيْ",
+      "storeViewCode": ""
+    },
+    // 40 Chinese - intl_zh.arb
+    {
+      "name": "Chinese",
+      "icon": "assets/images/country/zh.png",
+      "code": "zh",
+      "text": "中文",
+      "storeViewCode": ""
+    },
+    // 41 Chinese Traditional - intl_zh_TW.arb
+    {
+      "name": "Chinese (traditional)",
+      "icon": "assets/images/country/zh.png",
+      "code": "zh_TW",
+      "text": "漢語",
+      "storeViewCode": ""
+    },
+    // 42 Chinese Simplified - intl_zh_CN.arb
+    {
+      "name": "Chinese (simplified)",
+      "icon": "assets/images/country/zh.png",
+      "code": "zh_CN",
+      "text": "汉语",
+      "storeViewCode": ""
+    },
+    // 43 Burmese - intl_my.arb
+    {
+      "name": "Burmese",
+      "icon": "assets/images/country/my.png",
+      "code": "my",
+      "text": "မြန်မာဘာသာစကား",
+      "storeViewCode": ""
+    },
+    // 44 Albanian - intl_sq.arb
+    {
+      "name": "Albanian",
+      "icon": "assets/images/country/sq.png",
+      "code": "sq",
+      "text": "Shqip",
+      "storeViewCode": ""
+    },
+    // 45 Danish - intl_da.arb
+    {
+      "name": "Danish",
+      "icon": "assets/images/country/da.svg",
+      "code": "da",
+      "text": "Dansk",
+      "storeViewCode": ""
+    },
+    // 46 Tigrinya - intl_ti.arb
+    {
+      "name": "Tigrinya",
+      "icon": "assets/images/country/er.png",
+      "code": "ti",
+      "text": "ትግርኛ",
+      "storeViewCode": "ti"
+    },
+    // 47 Urdu - intl_ur.arb
+    {
+      "name": "Urdu",
+      "icon": "assets/images/country/pk.png",
+      "code": "ur",
+      "text": "اُردُو",
+      "storeViewCode": ""
+    },
+    // 48 Azerbaijani- intl_az.arb
+    {
+      "name": "Azerbaijani",
+      "icon": "assets/images/country/az.jpg",
+      "code": "az",
+      "text": "Azərbaycan dili",
+      "storeViewCode": ""
+    },
+    // 49 Kazakhstan - intl_kk.arb
+    {
+      "name": "Kazakhstan",
+      "icon": "assets/images/country/kz.png",
+      "code": "kk",
+      "text": "Қазақ тілі",
+      "storeViewCode": ""
+    },
+    // 50 Uzbek - intl_uz.arb
+    {
+      "name": "Uzbek",
+      "icon": "assets/images/country/uz.png",
+      "code": "uz",
+      "text": "O'zbek",
+      "storeViewCode": ""
+    },
+    // 51 Estonian - intl_et.arb
+    {
+      "name": "Estonian",
+      "icon": "assets/images/country/et.png",
+      "code": "et",
+      "text": "Eesti",
+      "storeViewCode": ""
+    },
+    // 52 Catalan - intl_ca.arb
+    {
+      "name": "Catalan",
+      "icon": "assets/images/country/ca.png",
+      "code": "ca",
+      "text": "Català",
+      "storeViewCode": ""
+    },
+    // 53 Georgia - intl_ka.arb
+    {
+      "name": "Georgia",
+      "icon": "assets/images/country/ka.png",
+      "code": "ka",
+      "text": "ქართული ენა",
+      "storeViewCode": ""
+    }
+  ],
+  "unsupportedLanguages": ['ku'],
+
+  /// ➡️  lib/common/config/payments.dart
+  "paymentConfig": {
+    "DefaultCountryISOCode": "US",
+
+    "DefaultStateISOCode": "LA",
+
+    /// Enable the Shipping option from Checkout, support for the Digital Download
+    "EnableShipping": true,
+
+    /// Enable the address shipping.
+    /// Set false if use for the app like Download Digial Asset which is not required the shipping feature.
+    "EnableAddress": true,
+
+    /// Allow customers to add note when order
+    "EnableCustomerNote": true,
+
+    /// Allow customers to add address location link to order note
+    "EnableAddressLocationNote": false,
+
+    /// Allow both alphabetical and numerical characters in ZIP code
+    "EnableAlphanumericZipCode": false,
+
+    /// Enable the product review option
+    "EnableReview": true,
+
+    /// enable the google map picker from Billing Address
+    "allowSearchingAddress": true,
+    "GuestCheckout": true,
+
+    /// Enable Payment option
+    "EnableOnePageCheckout": false,
+    "NativeOnePageCheckout": false,
+
+    /// Enable Credit card payment (only available for Fluxstore Shopipfy)
+    "EnableCreditCard": false,
+
+    /// Enable update order status to processing after checkout by COD on woo commerce
+    "UpdateOrderStatus": false,
+
+    /// Show order notes in order history detail.
+    "ShowOrderNotes": true,
+
+    /// Show Refund and Cancel button on Order Detail
+    "EnableRefundCancel": false
+  },
+  "payments": {
+    "paypal": "assets/icons/payment/paypal.png",
+    "stripe": "assets/icons/payment/stripe.png",
+    "razorpay": "assets/icons/payment/razorpay.png",
+    "tap": "assets/icons/payment/tap.png"
+  },
+  "stripeConfig": {
+    "serverEndpoint": "https://stripe-server.vercel.app",
+    "publishableKey": "pk_test_MOl5vYzj1GiFnRsqpAIHxZJl",
+    "enabled": true,
+    "paymentMethodId": "stripe",
+    "returnUrl": "fluxstore://inspireui.com",
+
+    /// Enable this automatically captures funds when the customer authorizes the payment.
+    /// Disable will Place a hold on the funds when the customer authorizes the payment,
+    /// but don’t capture the funds until later. (Not all payment methods support this.)
+    /// https://stripe.com/docs/payments/capture-later
+    /// Default: false
+    "enableManualCapture": false
+  },
+  "paypalConfig": {
+    "clientId":
+        "ASlpjFreiGp3gggRKo6YzXMyGM6-NwndBAQ707k6z3-WkSSMTPDfEFmNmky6dBX00lik8wKdToWiJj5w",
+    "secret":
+        "ECbFREri7NFj64FI_9WzS6A0Az2DqNLrVokBo0ZBu4enHZKMKOvX45v9Y1NBPKFr6QJv2KaSp5vk5A1G",
+    "production": false,
+    "paymentMethodId": "paypal",
+    "enabled": true
+  },
+  "paypalExpressConfig": {
+    "username": "sb-wea3q30917031_api1.business.example.com",
+    "password": "9MN73T4JHTBDY5W7",
+    "signature": "A-X91d6dvj07IIDTUn5hM8p8w8LxA-5D.cnvNUgufzpxxf1NNZBYh3kq",
+    "paymentAction": "Sale", //Sale, Order, Authorization.
+    "production": false,
+    "paymentMethodId": "paypal_express",
+    "enabled": false,
+  },
+  "razorpayConfig": {
+    "keyId": "rzp_test_SDo2WKBNQXDk5Y",
+    "keySecret": "RrgfT3oxbJdaeHSzvuzaJRZf",
+    "paymentMethodId": "razorpay",
+    "enabled": true
+  },
+  "tapConfig": {
+    "SecretKey": "sk_test_XKokBfNWv6FIYuTMg5sLPjhJ",
+    "paymentMethodId": "tap",
+    "enabled": true
+  },
+  "mercadoPagoConfig": {
+    "accessToken":
+        "TEST-5726912977510261-102413-65873095dc5b0a877969b7f6ffcceee4-613803978",
+    "production": false,
+    "paymentMethodId": "woo-mercado-pago-basic",
+    "enabled": true
+  },
+  "defaultCountryShipping": [],
+
+  /// config for after shipping
+  "afterShip": {
+    "enabled": true,
+    "tracking_url": "https://fluxstore.aftership.com",
+    "custom_tracking_url":
+        "https://fluxstore.aftership.com/{slug}/{trackingNumber}",
+  },
+
+  /// ➡️ lib/common/products.dart
+  "productDetail": {
+    "height": 0.4,
+    "marginTop": 0,
+    "safeArea": false,
+    "showVideo": true,
+    "showBrand": true,
+    "showThumbnailAtLeast": 1,
+    "layout": "simpleType",
+    "borderRadius": 3.0,
+
+    /// Enable this to show selected image variant in the top banner.
+    "ShowSelectedImageVariant": true,
+
+    /// Enable this to add a white background to top banner for transparent product image.
+    "ForceWhiteBackground": false,
+
+    /// Auto select first attribute of variable product if there is no default attribute.
+    "AutoSelectFirstAttribute": true,
+
+    /// Enable this to show review in product description.
+    "enableReview": true,
+    "attributeImagesSize": 50.0,
+    "showSku": true,
+    "showStockQuantity": true,
+    "showProductCategories": true,
+    "showProductTags": true,
+    "hideInvalidAttributes": false,
+    "showRating": true,
+  },
+  "productVariantLayout": {
+    "color": "color",
+    "size": "box",
+    "height": "option",
+    "color-image": "image"
+  },
+  "productAddons": {
+    /// Set the allowed file type for file upload.
+    /// On iOS will open Photos app.
+    "allowImageType": true,
+    "allowVideoType": true,
+
+    /// Enable to allow upload files other than image/video.
+    /// On iOS will open Files app.
+    "allowCustomType": true,
+
+    /// Set allowed file extensions for custom type.
+    /// Leave empty ("allowedCustomType": []) to support all extensions.
+    "allowedCustomType": ["png", "pdf", "docx"],
+
+    /// NOTE: WordPress might restrict some file types for security purpose.
+    /// To allow it, you can add this line to wp-config.php:
+    /// define('ALLOW_UNFILTERED_UPLOADS', true);
+    /// - which is NOT recommended.
+    /// Instead, try to use a plugin like https://wordpress.org/plugins/wp-extra-file-types
+    /// to allow custom file types.
+
+    /// Allow selecting multiple files for upload. Default: false.
+    "allowMultiple": false,
+
+    /// Set the file size limit (in MB) for upload. Recommended: <15MB.
+    "fileUploadSizeLimit": 5.0
+  },
+  "cartDetail": {
+    "minAllowTotalCartValue": 0,
+    "maxAllowQuantity": 10,
+
+    /// Cart Style: normal, style01
+    "style": "normal"
+  },
+  "productVariantLanguage": {
+    "en": {
+      "color": "Color",
+      "size": "Size",
+      "height": "Height",
+      "color-image": "Color"
+    },
+    "ar": {
+      "color": "اللون",
+      "size": "بحجم",
+      "height": "ارتفاع",
+      "color-image": "اللون"
+    },
+    "vi": {
+      "color": "Màu",
+      "size": "Kích thước",
+      "height": "Chiều Cao",
+      "color-image": "Màu"
+    }
+  },
+
+  /// Exclude these category IDs from the list (e.g., "311,23,208").
+  /// Note: Products in these categories will still appear. To hide specific products, use "excludedProductIDs".
+  "excludedCategoryIDs": "",
+
+  /// Exclude these product IDs from the list, e.g., "36920,35508,31893"
+  "excludedProductIDs": "",
+  "saleOffProduct": {
+    /// Show Count Down for product type SaleOff
+    "ShowCountDown": true,
+    "HideEmptySaleOffLayout": false,
+    "Color": "#C7222B"
+  },
+
+  /// This is strict mode option to check the `visible` option from product variant
+  /// https://tppr.me/4DJJs - default value is false
+  "notStrictVisibleVariant": true,
+
+  /// ➡️ lib/common/smartchat.dart
+  "configChat": {
+    "EnableSmartChat": true,
+    "showOnScreens": ["profile"],
+    "hideOnScreens": [],
+  },
+
+  /// config for the chat app
+  /// config Whatapp: https://faq.whatsapp.com/en/iphone/23559013
+  "smartChat": [
+    {
+      "app": "firebase",
+      "imageData":
+          "https://trello.com/1/cards/611a38c89ebde41ec7cf10e2/attachments/611a392cceb1b534aa92a83e/previews/611a392dceb1b534aa92a84d/download",
+      "description": 'Realtime Chat',
+    },
+    {
+      "app": "https://wa.me/849908854",
+      "iconData": "whatsapp",
+      "description": 'WhatsApp'
+    },
+    {"app": "tel:8499999999", "iconData": "phone", "description": 'Call Us'},
+    {"app": "sms://8499999999", "iconData": "sms", "description": 'Send SMS'},
+    {
+      "app": "https://tawk.to/chat/5d830419c22bdd393bb69888/default",
+      "iconData": "whatsapp",
+      "description": "Tawk Chat"
+    },
+    {
+      "app": "http://m.me/inspireui",
+      "iconData": "facebookMessenger",
+      "description": "Facebook Chat"
+    },
+    {
+      "app":
+          "https://twitter.com/messages/compose?recipient_id=821597032011931648",
+      "imageData":
+          "https://trello.com/1/cards/611a38c89ebde41ec7cf10e2/attachments/611a38d026894f10dc1091c8/previews/611a38d126894f10dc1091d6/download",
+      "description": "Twitter Chat"
+    }
+  ],
+  "adminEmail": "admininspireui@gmail.com",
+  "adminName": "InspireUI",
+
+  /// ➡️ lib/common/vendor.dart
+  "vendorConfig": {
+    /// Show Register by Vendor
+    "VendorRegister": true,
+
+    /// Disable show shipping methods by vendor
+    "DisableVendorShipping": false,
+
+    /// Enable/Disable showing all vendor markers on Map screen
+    "ShowAllVendorMarkers": true,
+
+    /// Enable/Disable native store management
+    "DisableNativeStoreManagement": false,
+
+    /// Dokan Vendor Dashboard
+    "dokan": "my-account?vendor_admin=true",
+    "wcfm": "store-manager?vendor_admin=true"
+  },
+
+  //lib/common/loading.dart
+  "loadingIcon": {"size": 30.0, "type": "fadingCube"},
+  "reviewConfig": {
+    "service": "judge",
+    "enableReview": true,
+    "enableReviewImage": false,
+    "judgeConfig": {
+      "domain": "fluxchat.myshopify.com",
+      "apiKey": "2RKAv9CXcMPpnPmyGxXCRNl8TFaE8pFbkaJo7qiL-6g",
+    }
+  },
+  "darkConfig": {"MainColor": "ff256dfd", "saleColor": "#E15241"},
+  "lightConfig": {"MainColor": "ff256dfd", "saleColor": "#E15241"},
+  "colorOverrideConfig": {
+    "productFilterColor": {
+      "useBackgroundColor": false,
+      "usePrimaryColorLight": false,
+      "backgroundColorOpacity": 1.0,
+      "labelColorOpacity": 1.0,
+      "useAccentColor": false
+    },
+    "stockColor": {
+      "inStock": "ff256dfd",
+      "outOfStock": "ffe74c3c",
+      "backorder": "ffeaa601"
+    },
+    "ratingColor": {
+      "primaryStar": "fff39c12",
+      "borderStar": "ff3fc1be",
+      "primaryLinearProgress": "fff39c12",
+      "backgroundLinearProgress": "fff1f2f3"
+    }
+  },
+  "orderConfig": {
+    "version": 2,
+  },
+  "offlineModeConfig": {
+    "enable": true,
+  },
+};
