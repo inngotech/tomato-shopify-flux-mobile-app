@@ -9,7 +9,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${appName}</string>
+	<string>Tomato Stores</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -60,7 +60,7 @@
 		<string>sq</string>
 	</array>
 	<key>CFBundleName</key>
-	<string>${appName}</string>
+	<string>TomatoStores</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -123,13 +123,13 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>ENVATO_PURCHASE_CODE</key>
-	<string>${envatoPurchaseCode}</string>
+	<string>92f1ca78-2cca-486c-896f-141d7ae5584c</string>
 	<key>FacebookAppID</key>
 	<string>${facebookAppId}</string>
 	<key>FacebookClientToken</key>
 	<string>${facebookClientToken}</string>
 	<key>FacebookDisplayName</key>
-	<string>${appName}</string>
+	<string>Tomato Stores</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
 	<key>FirebaseDeepLinkPasteboardRetrievalEnabled</key>
@@ -139,7 +139,7 @@
 	<key>FlutterDeepLinkingEnabled</key>
 	<false/>
 	<key>GADApplicationIdentifier</key>
-	<string>${adMobAppIdIos}</string>
+	<string>ca-app-pub-7432665165146018~2664444130</string>
 	<key>GOOGLE_API_KEY</key>
 	<string>${googleApiKeyIos}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

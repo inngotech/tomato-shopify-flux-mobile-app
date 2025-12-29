@@ -216,7 +216,7 @@ class ShopifyWidget extends BaseFrameworks
       // Egyptian Governorates
       states = [
         CountryState(id: 'cairo', code: 'Cairo', name: 'Cairo'),
-        CountryState(id: 'alexadria', code: 'Alexandria', name: 'Alexandria'),
+        CountryState(id: 'alexandria', code: 'Alexandria', name: 'Alexandria'),
         CountryState(id: 'giza', code: 'Giza', name: 'Giza'),
         CountryState(id: 'sharqia', code: 'Sharqia', name: 'Sharqia'),
         CountryState(id: 'dakahlia', code: 'Dakahlia', name: 'Dakahlia'),
