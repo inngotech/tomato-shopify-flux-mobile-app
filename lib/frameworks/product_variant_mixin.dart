@@ -533,21 +533,40 @@ Widget actionButton(
           if (alwaysShowBuyButton || (isAvailable && allowToBuy)) ...[
             const SizedBox(width: 10),
             Expanded(
-              child: GestureDetector(
-                onTap: () => addToCart(buyNow: false, inStock: allowToBuy),
-                child: Container(
-                  height: 44,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3),
-                    color: Theme.of(context).primaryColorLight,
-                  ),
-                  child: Center(
-                    child: Text(
-                      S.of(context).addToCart.toUpperCase(),
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => addToCart(buyNow: false, inStock: allowToBuy),
+                  borderRadius: BorderRadius.circular(3),
+                  splashColor:
+                      Theme.of(context).colorScheme.secondary.withAlpha(60),
+                  highlightColor:
+                      Theme.of(context).colorScheme.secondary.withAlpha(30),
+                  child: Ink(
+                    height: 44,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(3),
+                      // color: Theme.of(context).primaryColorLight,
+                      color: Colors.grey[200],
+                      border: Border.all(color: Colors.grey[300]!),
+                      boxShadow: [
+                        BoxShadow(
+                          color:
+                              Theme.of(context).primaryColorLight.withAlpha(60),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        S.of(context).addToCart.toUpperCase(),
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          letterSpacing: 0.5,
+                        ),
                       ),
                     ),
                   ),

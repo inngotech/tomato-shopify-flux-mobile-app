@@ -68,6 +68,7 @@ class _GroupedProductState extends State<GroupedProduct> {
       unawaited(FlashHelper.message(
         context,
         message: S.of(context).addedSuccessfully,
+        backgroundColor: Colors.green,
       ));
     }
   }

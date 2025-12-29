@@ -105,6 +105,7 @@ class FlashHelper {
     bool isError = false,
     GestureTapCallback? onTap,
     bool? isHtml,
+    Color? backgroundColor,
   }) async {
     return _tryShowFlash<T>(
       context,
@@ -121,9 +122,10 @@ class FlashHelper {
         barrierDismissible: onTap != null,
         builder: (context, controller) {
           return FlashBar(
-            backgroundColor: isError
-                ? Theme.of(context).colorScheme.error
-                : Theme.of(context).primaryColor,
+            backgroundColor: backgroundColor ??
+                (isError
+                    ? Theme.of(context).colorScheme.error
+                    : Theme.of(context).primaryColor),
             controller: controller,
             behavior: FlashBehavior.floating,
             position: FlashPosition.top,

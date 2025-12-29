@@ -68,6 +68,7 @@ mixin ActionButtonMixin {
             color: Colors.white,
             fontSize: 18.0,
           ),
+          backgroundColor: Colors.green,
         ));
       }
     }

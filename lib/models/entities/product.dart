@@ -2802,11 +2802,11 @@ class Product {
   /// but the list of variations is null or empty then product
   /// is determined out of stock
   bool? checkInStock() {
-    if (ServerConfig().isWooType) {
-      if (isVariableProduct) {
-        final hasVariation = (variations?.isNotEmpty ?? false) ||
-            (variationProducts?.isNotEmpty ?? false);
+    if (isVariableProduct) {
+      final hasVariation = (variations?.isNotEmpty ?? false) ||
+          (variationProducts?.isNotEmpty ?? false);
 
+      if (ServerConfig().isWooType) {
         if (hasVariation == false) {
           /// Because in some special cases, the api retrieves no list
           /// of variations but only a list of variationIds,
@@ -2818,7 +2818,9 @@ class Product {
           /// to the inStock of the variations
           return (variationIds?.isNotEmpty ?? false) ? true == inStock : false;
         }
+      }
 
+      if (hasVariation) {
         var inStockVariant = false;
 
         final listProductVaraint = (variations?.isNotEmpty ?? false)
@@ -2832,11 +2834,9 @@ class Product {
 
         return inStockVariant;
       }
-
-      return true == inStock;
     }
 
-    return inStock;
+    return true == inStock;
   }
 
   LiteProduct toLiteProduct(String orderId) {
