@@ -489,6 +489,7 @@ mixin ProductVariantMixin on BaseFrameworks {
           color: Colors.white,
           fontSize: 18.0,
         ),
+        backgroundColor: Colors.green,
       ));
     }
   }
