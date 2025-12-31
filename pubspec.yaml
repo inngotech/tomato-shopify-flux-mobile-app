@@ -6,7 +6,11 @@ description: Mobile commerce app by Flutter
 # A version number is three numbers separated by dots, like 1.2.43 - followed by an optional build number separated by a +.
 # In Android, build-name is used as versionName while build-number used as versionCode.Read more about Android versioning at https://developer.android.com/studio/publish/versioning
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion. Read more about iOS versioning at https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+<<<<<<< HEAD
 version: 1.0.25+3036
+=======
+version: 1.0.25+3037
+>>>>>>> ffed7cf103c36fd5b6d7090e5c14d3466f24e21c
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
