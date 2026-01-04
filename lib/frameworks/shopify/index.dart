@@ -211,7 +211,6 @@ class ShopifyWidget extends BaseFrameworks
   Future<List<CountryState>> loadStates(Country country) async {
     var states = <CountryState>[];
 
-    // Check if the country is Egypt
     if (country.id == 'EG' || country.id == 'eg') {
       // Egyptian Governorates
       states = [

@@ -208,28 +208,40 @@ class _ShippingAddressState extends State<ShippingAddress> {
         refresh();
 
         /// Load cities.
-        var state = states.firstWhereOrNull(
-          (element) =>
-              element.id == address.state || element.code == address.state,
-        );
-        if (state != null) {
-          cities = await Services().widget.loadCities(country, state) ?? [];
-          var city = cities.firstWhereOrNull(
-            (element) => element.name == address.city,
+        if (country.id == 'EG' || country.id == 'eg') {
+          cities = [];
+          var stateObj = states.firstWhereOrNull(
+            (element) =>
+                element.id == address.state || element.code == address.state,
           );
+          if (stateObj != null) {
+            address.city = stateObj.name;
+            _textControllers[AddressFieldType.city]?.text = stateObj.name ?? '';
+          }
+        } else {
+          var state = states.firstWhereOrNull(
+            (element) =>
+                element.id == address.state || element.code == address.state,
+          );
+          if (state != null) {
+            cities = await Services().widget.loadCities(country, state) ?? [];
+            var city = cities.firstWhereOrNull(
+              (element) => element.name == address.city,
+            );
 
-          /// Load zipCode
-          if (city != null) {
-            var zipCode =
-                await Services().widget.loadZipCode(country, state, city);
-            if (zipCode != null) {
-              /// Override the default value with this value
-              address.zipCode = zipCode;
-              _textControllers[AddressFieldType.zipCode]?.text = zipCode;
+            /// Load zipCode
+            if (city != null) {
+              var zipCode =
+                  await Services().widget.loadZipCode(country, state, city);
+              if (zipCode != null) {
+                /// Override the default value with this value
+                address.zipCode = zipCode;
+                _textControllers[AddressFieldType.zipCode]?.text = zipCode;
+              }
             }
           }
-          refresh();
         }
+        refresh();
       },
     );
   }

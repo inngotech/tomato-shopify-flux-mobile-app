@@ -195,9 +195,21 @@ extension on _ShippingAddressState {
             value: value,
             onChanged: (dynamic val) async {
               address.state = val;
-              final country = Country(id: address.country);
-              final state = CountryState(id: val);
-              cities = await Services().widget.loadCities(country, state) ?? [];
+              if (address.country?.toUpperCase() == 'EG') {
+                final selectedState =
+                    states.firstWhereOrNull((s) => s.id == val);
+                if (selectedState != null) {
+                  address.city = selectedState.name;
+                  _textControllers[AddressFieldType.city]?.text =
+                      selectedState.name ?? '';
+                  cities = [];
+                }
+              } else {
+                final country = Country(id: address.country);
+                final state = CountryState(id: val);
+                cities =
+                    await Services().widget.loadCities(country, state) ?? [];
+              }
               address.zipCode = '';
               _textControllers[AddressFieldType.zipCode]?.text = '';
               refresh();
