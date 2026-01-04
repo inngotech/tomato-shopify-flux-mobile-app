@@ -306,7 +306,6 @@ class _WishListState extends State<ProductWishListScreen>
                       ),
                     ),
                     const Divider(height: 1, color: kGrey200),
-                    const SizedBox(height: 14.0),
                     Expanded(
                       child: renderWishListWidget(),
                     )
